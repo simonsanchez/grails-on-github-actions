@@ -7,13 +7,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v2
-        with:
-          path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
       - name: Print Grails help
         run: |
           wget -q "https://github.com/grails/grails-core/releases/download/v5.3.2/grails-5.3.2.zip" -O temp.zip
