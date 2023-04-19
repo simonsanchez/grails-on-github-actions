@@ -24,4 +24,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
       - name: Print Grails help
-        run: grails help
+        run: |
+          wget "https://github.com/grails/grails-core/releases/download/v5.3.2/grails-5.3.2.zip" -O temp.zip
+          unzip temp.zip
+          cd grails-5.3.2/
+          grails help
