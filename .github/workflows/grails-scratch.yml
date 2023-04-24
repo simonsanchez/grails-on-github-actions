@@ -9,9 +9,11 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-      - name: Print Grails help
+      - name: Run tests
         run: |
           cd complete/
           wget -q "https://github.com/grails/grails-core/releases/download/v4.1.2/grails-4.1.2.zip" -O temp.zip
           unzip -q temp.zip
           grails-4.1.2/bin/grails test-app --non-interactive
+      - name: Greetings
+        run: echo "Greetings, friend."
