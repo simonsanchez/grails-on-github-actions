@@ -16,7 +16,9 @@ jobs:
           unzip -q temp.zip
           grails-4.1.2/bin/grails test-app --non-interactive
       - name: List reports
-        run: ls -la complete/build/
+        run: |-
+          ls -la complete/build/reports/tests
+          ls -la complete/build/test-results
         if: always()
       - name: Greetings
         run: echo "Greetings, friend."
