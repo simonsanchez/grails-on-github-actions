@@ -10,10 +10,15 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
       - name: Run tests
-        run: |
+        run: |-
           cd complete/
           wget -q "https://github.com/grails/grails-core/releases/download/v4.1.2/grails-4.1.2.zip" -O temp.zip
           unzip -q temp.zip
           grails-4.1.2/bin/grails test-app --non-interactive
+      - nam: List reports
+        run: |-
+          ls -la build/reports/tests
+          ls -la build/test-results
+        if: always()
       - name: Greetings
         run: echo "Greetings, friend."
