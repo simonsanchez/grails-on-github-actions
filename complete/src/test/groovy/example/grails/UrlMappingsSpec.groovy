@@ -7,6 +7,6 @@ class UrlMappingsSpec extends Specification implements UrlMappingsUnitTest<UrlMa
 
     void "test forward mappings"() {
         expect:
-        verifyForwardUrlMapping("/", view: 'index')
+        verifyForwardUrlMapping("/", view: 'foo')
     }
 }
