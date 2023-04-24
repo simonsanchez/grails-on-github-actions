@@ -15,7 +15,7 @@ jobs:
           wget -q "https://github.com/grails/grails-core/releases/download/v4.1.2/grails-4.1.2.zip" -O temp.zip
           unzip -q temp.zip
           grails-4.1.2/bin/grails test-app --non-interactive
-      - nam: List reports
+      - name: List reports
         run: |-
           ls -la build/reports/tests
           ls -la build/test-results
