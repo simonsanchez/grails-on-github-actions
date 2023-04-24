@@ -10,7 +10,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
       - name: Gradle
-        run: cd complete/ && ./grails-wrapper.jar test-app
+        run: cd complete/ && java -jar grails-wrapper.jar
       # - name: Print Grails help
       #   run: |
       #     ls -la
